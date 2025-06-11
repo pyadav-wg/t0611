@@ -5,7 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class ConnectorService {
   private peerConnection: RTCPeerConnection = new RTCPeerConnection({
-    iceServers: [{ urls: 'stun:stun.l.google.com:19302' }],
+    iceServers: [
+      { urls: 'stun:35.154.145.17:3478' },
+      {
+        urls: 'turn:35.154.145.17:3478?transport=udp',
+        username: 'testuser',
+        credential: 'testpass'
+      }
+    ]
   });
   private dataChannel: RTCDataChannel =
     this.peerConnection.createDataChannel('chat');
