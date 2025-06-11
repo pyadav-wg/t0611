@@ -1,0 +1,9 @@
+<button (click)="onCreateOffer()">Create Offer</button>
+<span>{{ offerStatus() }}</span>
+<br />
+<textarea
+  #answer
+  type="text"
+  placeholder="paste answer"
+></textarea>
+<button (click)="onAcceptAnswer(answer.value)">Accept Answer</button>

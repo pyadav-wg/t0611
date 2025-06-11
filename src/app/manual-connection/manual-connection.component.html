@@ -1,0 +1,18 @@
+<div class="option-container">
+  <button
+    class="panel-selector"
+    (click)="onRequestPanel()"
+  >Request</button>
+  <button
+    class="panel-selector"
+    (click)="onAnswerPanel()"
+  >Answer</button>
+</div>
+
+<div class="panel-container">
+  @if (activePanel() === 'request') {
+    <app-request-connection/>
+  } @if (activePanel() === 'answer') {
+    <app-answer-connection/>
+  }
+</div>
